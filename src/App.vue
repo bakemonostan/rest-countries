@@ -4,9 +4,12 @@
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
+import Navbar from "./components/Navbar.vue";
 export default { components: { Navbar } };
 </script>
 
-<style></style>
-
+<style>
+html.dark {
+  color-scheme: dark;
+}
+</style>
