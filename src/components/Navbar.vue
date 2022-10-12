@@ -9,7 +9,6 @@
           v-if="isDark"
           @click="toggleTheme()"
         >
-          <v-icon name="co-moon" />
           Dark Mode
         </button>
         <button
@@ -17,7 +16,6 @@
           v-else
           @click="toggleTheme()"
         >
-          <v-icon name="co-sun" />
           Light Mode
         </button>
       </div>
@@ -27,12 +25,9 @@
 
 <script>
 import { useDark, useToggle } from "@vueuse/core";
-import { OhVueIcon } from "oh-vue-icons";
 
 export default {
-  components: {
-    "v-icon": OhVueIcon,
-  },
+  components: {},
 
   setup() {
     const isDark = useDark();

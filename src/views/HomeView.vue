@@ -1,17 +1,42 @@
 <template>
-  <main class="h-full dark:bg-[#202c37]">
+  <main class="bg-[#fafafa] dark:bg-[#202c37]">
     <section class="max-w-[1200px] mx-auto py-2 px-3">
-      <InputBar />
-      <h1 class="text-xl font-bold mt-6">Hello world!</h1>
+      <form @submit.prevent="handleInput">
+        <input
+          class="w-full py-2 px-8 mt-5 rounded-sm md:w-2/5 shadow-lg bg-white dark:bg-[#2b3945]"
+          type="searchInput"
+          placeholder="Search for a country..."
+          v-model="searchInput"
+        />
+        <h1 class="searchInput-xl font-bold mt-6">{{ searchInput }}</h1>
+      </form>
+      <div v-for="country in countries" :key="country.area">
+        <p>{{ country.name }}</p>
+      </div>
     </section>
   </main>
 </template>
 
 <script>
-import InputBar from "@/components/InputBar.vue";
+import { ref } from "vue";
+import getCountries from "@/composables/getCountries";
+
 export default {
   name: "HomeView",
-  components: { InputBar },
-  setup() {},
+
+  setup() {
+    const { countries, error, load } = getCountries();
+    const searchInput = ref("");
+    load();
+
+    const handleInput = () => {
+      console.log(searchInput.value);
+      searchInput.value = "";
+    };
+
+    return { searchInput, handleInput, countries, error, load };
+  },
 };
 </script>
+
+<style></style>
