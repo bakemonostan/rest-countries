@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <header class="bg-white shadow-md dark:bg-[#2b3945] dark:shadow-md">
-    <nav class="max-w-[1200px] mx-auto flex justify-between items-center py-7 px-4">
+    <nav class="max-w-screen-2xl mx-auto flex justify-between items-center py-7 px-4">
       <div><h1 class="font-bold dark">Where in the world?</h1></div>
       <div>
         <button

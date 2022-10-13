@@ -1,6 +1,6 @@
 <template>
   <main class="bg-[#fafafa] dark:bg-[#202c37]">
-    <section class="max-w-[1200px] mx-auto py-2 px-3">
+    <section class="max-w-screen-2xl mx-auto py-2 px-3">
       <form @submit.prevent="handleInput">
         <input
           class="w-full py-2 px-8 mt-5 rounded-sm md:w-2/5 shadow-lg bg-white dark:bg-[#2b3945]"
@@ -10,8 +10,10 @@
         />
         <h1 class="searchInput-xl font-bold mt-6">{{ searchInput }}</h1>
       </form>
+      <home-card />
+      <!-- <p v-if="!countries.length">loading...</p> -->
       <div v-for="country in countries" :key="country.area">
-        <p>{{ country.name }}</p>
+        <!-- <p>{{ country.name }}</p> -->
       </div>
     </section>
   </main>
@@ -20,8 +22,10 @@
 <script>
 import { ref } from "vue";
 import getCountries from "@/composables/getCountries";
+import HomeCard from "@/components/HomeCard.vue";
 
 export default {
+  components: { HomeCard },
   name: "HomeView",
 
   setup() {

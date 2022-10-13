@@ -7,14 +7,13 @@ const getCountries = () => {
   // Create fetch function
   const load = async () => {
     try {
-      let response = await fetch(
-        'https://restcountries.com/v2/all?fields=name,capital,borders'
-      );
+      let response = await fetch('https://restcountries.com/v2/all');
       if (!response.ok) {
         throw Error('An Error Occured');
       }
       countries.value = await response.json();
-      console.log(countries.value);
+      countries.value = countries.value.slice(0, 50);
+      console.log(countries.value.slice(0, 2));
     } catch (err) {
       error.value = err.message;
     }

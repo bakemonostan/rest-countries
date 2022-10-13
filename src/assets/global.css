@@ -15,3 +15,13 @@
 body {
   font-family: 'Nunito Sans', sans-serif;
 }
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #fafafa;
+  }
+  html.dark {
+    background: #202c37;
+    color: white;
+  }
+}
