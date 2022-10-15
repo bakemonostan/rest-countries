@@ -10,10 +10,9 @@
         />
         <h1 class="searchInput-xl font-bold mt-6">{{ searchInput }}</h1>
       </form>
-      <home-card />
-      <!-- <p v-if="!countries.length">loading...</p> -->
-      <div v-for="country in countries" :key="country.area">
-        <!-- <p>{{ country.name }}</p> -->
+      <p v-if="!countries.length">loading...</p>
+      <div class="flex flex-wrap gap-10 justify-center py-10 2xl:justify-between">
+        <home-card v-for="country in countries" :key="country.area" :country="country" />
       </div>
     </section>
   </main>

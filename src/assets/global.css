@@ -16,6 +16,12 @@ body {
   font-family: 'Nunito Sans', sans-serif;
 }
 
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     background: #fafafa;

@@ -1,31 +1,34 @@
 <template>
-  <div>
-    <figure>
-      <img src="/" alt="/" />
-      image goes here
-      <figcaption>
-        <h2>Germany</h2>
+  <div
+    class="flex-none basis-[320px] shadow-lg rounded-lg dark:bg-[#2b3945] cursor-pointer"
+  >
+    <div class="split flex flex-col justify-between">
+      <div>
+        <img :src="country.flag" alt="/" class="h-56 rounded-t-lg" />
+      </div>
+
+      <div class="py-4 px-8 space-y-2 pb-12">
+        <h2 class="py-4 font-bold text-xl">{{ country.name }}</h2>
         <p>
-          Population:
-          <span>81, 770,900</span>
+          <span class="font-bold">Population:</span>
+          {{ country.population }}
         </p>
         <p>
-          Region:
-          <span>Europe</span>
+          <span class="font-bold">Region:</span>
+          {{ country.region }}
         </p>
         <p>
-          Capital:
-          <span>Berlin</span>
+          <span class="font-bold">Capital:</span>
+          {{ country.capital }}
         </p>
-      </figcaption>
-    </figure>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  setup() {
-    return {};
-  },
+  props: ["country"],
+  setup() {},
 };
 </script>
