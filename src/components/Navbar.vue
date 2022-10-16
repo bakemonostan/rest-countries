@@ -2,7 +2,11 @@
 <template>
   <header class="bg-white shadow-md dark:bg-[#2b3945] dark:shadow-md">
     <nav class="max-w-screen-2xl mx-auto flex justify-between items-center py-7 px-4">
-      <div><h1 class="font-bold dark">Where in the world?</h1></div>
+      <div>
+        <router-link :to="{ name: 'Home' }">
+          <h1 class="font-bold dark">Where in the world?</h1>
+        </router-link>
+      </div>
       <div>
         <button
           class="font-bold text-xs cursor-pointer text-white flex items-center gap-1"

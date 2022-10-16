@@ -12,9 +12,7 @@ const getCountries = () => {
         throw Error('An Error Occured');
       }
       countries.value = await response.json();
-      // countries.value = countries.value.slice(0, 60);
-
-      console.log(countries.value);
+      countries.value = countries.value.slice(0, 8);
     } catch (err) {
       error.value = err.message;
     }
