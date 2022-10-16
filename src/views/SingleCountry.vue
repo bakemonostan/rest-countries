@@ -20,6 +20,7 @@ export default {
   props: ["id"],
   setup(props) {
     const { country, error, load } = getCountry(props.id);
+
     load();
     return { country, error, load };
   },

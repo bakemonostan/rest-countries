@@ -12,6 +12,7 @@ const getCountry = (id) => {
       }
       country.value = await response.json();
       country.value = country.value[0];
+
       //   console.log(country.value.population);
       //   console.log(country.value.region);
       //   console.log(country.value.subregion);
