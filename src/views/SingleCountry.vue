@@ -1,7 +1,15 @@
 <template>
   <main class="bg-[#fafafa] dark:bg-[#202c37]">
     <section class="max-w-screen-2xl mx-auto py-10 px-3">
-      <div v-if="country" class="flex flex-col px-8 lg:flex-row lg:gap-10">
+      <router-link :to="{ name: 'Home' }">
+        <button
+          class="py-3 px-10 w-40 shadow-lg rounded-lg mb-16 bg-[#fafafa] dark:bg-[#2B3945]"
+        >
+          Back
+        </button>
+      </router-link>
+
+      <div v-if="country" class="flex flex-col px-8 lg:flex-row lg:gap-10 lg:px-0">
         <!-- flag -->
         <div class="flag basis-1/2">
           <img
@@ -59,7 +67,7 @@
 
             <div class="flex flex-wrap gap-2">
               <p
-                class="px-8 py-2 rounded-md grow dark:bg-[#2b3945] dark:shadow-md md:grow-0"
+                class="px-8 py-2 rounded-md grow bg-white shadow-md dark:bg-[#2b3945] md:grow-0"
                 v-for="border in country.borders"
                 :key="border"
               >
