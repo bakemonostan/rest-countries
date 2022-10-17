@@ -12,7 +12,7 @@
           <h2 class="py-4 font-bold text-xl">{{ country.name }}</h2>
           <p>
             <span class="font-bold">Population:</span>
-            {{ country.population }}
+            {{ country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") }}
           </p>
           <p>
             <span class="font-bold">Region:</span>

@@ -38,25 +38,20 @@
 import { ref, computed } from "vue";
 import getCountries from "@/composables/getCountries";
 import HomeCard from "@/components/HomeCard.vue";
-
 export default {
   components: { HomeCard },
   name: "HomeView",
-
   setup() {
     const { countries, error, load } = getCountries();
     load();
     const searchInput = ref("");
-
     const regions = ref(["Africa", "America", "Asia", "Europe", "Oceania"]);
-
     // Computed
     const searchCountry = computed(() => {
       return countries.value.filter((country) =>
         country.name.toLowerCase().includes(searchInput.value.toLowerCase())
       );
     });
-
     const handleInput = (e) => {
       const searchCountry = computed(() => {
         return countries.value.filter((country) =>
@@ -72,7 +67,6 @@ export default {
     //     return country;
     //   });
     // });
-
     // console.log(filteredCountries);
 
     return {
